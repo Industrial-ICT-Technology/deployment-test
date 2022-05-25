@@ -121,6 +121,7 @@ def workstatus(request):
                     i += 1
 
                 # 정렬 요청 들어오면 session에 정렬 요구 상태 저장
+                request.session['sort'] = 'positive'
                 if request.method == "POST" and 'sort' in request.POST:
                     sort = request.POST.get('sort')
                     request.session['sort'] = sort
